@@ -1,0 +1,99 @@
+{
+  "entities": {
+    "Treatment": {
+      "title": "Treatment",
+      "description": "Un tratamiento dental ofrecido por la clínica",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "duration": { "type": "number" }
+      },
+      "required": ["id", "name", "category", "price", "duration"]
+    },
+    "Doctor": {
+      "title": "Doctor",
+      "description": "Un médico de la clínica dental",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "specialty": { "type": "string" },
+        "status": { "type": "string" },
+        "nextAvailable": { "type": "string" },
+        "image": { "type": "string" }
+      },
+      "required": ["id", "name", "specialty", "status", "nextAvailable"]
+    },
+    "Appointment": {
+      "title": "Appointment",
+      "description": "Una cita médica dental",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "patientName": { "type": "string" },
+        "patientId": { "type": "string" },
+        "treatment": { "type": "string" },
+        "treatmentId": { "type": "string" },
+        "doctorName": { "type": "string" },
+        "doctorId": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["id", "patientName", "patientId", "treatment", "treatmentId", "doctorName", "doctorId", "date", "time", "status", "timestamp"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Un mensaje de la bandeja de entrada o valoración",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "sender": { "type": "string" },
+        "content": { "type": "string" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["id", "type", "sender", "content", "status", "timestamp"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Perfil de usuario de la aplicación",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["uid", "name", "email", "role"]
+    }
+  },
+  "firestore": {
+    "treatments/{treatmentId}": {
+      "schema": "Treatment",
+      "description": "Colección de tratamientos dentales"
+    },
+    "doctors/{doctorId}": {
+      "schema": "Doctor",
+      "description": "Colección de doctores facultativos"
+    },
+    "appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Colección de citas agendadas"
+    },
+    "messages/{messageId}": {
+      "schema": "Message",
+      "description": "Mensajes y valoraciones del centro"
+    },
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Datos de perfil de usuarios de la app"
+    }
+  }
+}

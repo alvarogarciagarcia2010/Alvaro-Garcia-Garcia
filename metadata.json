@@ -1,0 +1,6 @@
+{
+  "name": "Lumina Dental",
+  "description": "Panel de administración avanzado y portal del paciente con IA para Lumina Dental.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,8 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-luminadental-b1d75b8b-ff53-4f65-bc91-aeb0bbf33c41",
+      "rules": "firestore.rules"
+    }
+  ]
+}
